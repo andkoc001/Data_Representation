@@ -1,0 +1,41 @@
+<!-- Data Representation and Querying - GMIT, 2020 -->
+<!-- Lecturer: dr Andrew Beatty -->
+<!-- Author: Andrzej Kocielski, G00376291@gmail.ie -->
+
+<?xml version="1.0" encoding="UTF-8"?> 
+
+<library>
+
+  <technicalBooksCatalogue>
+
+    <book> 
+      <isbn> 0131872842 </isbn> 
+      <title> Peter Van Der Linden's Guide to Linux </title>       
+      <author> Peter van der Linden </author> 
+    </book>
+
+    <book> 
+      <isbn> 1491912057 </isbn> 
+      <title> Python Data Science Handbook </title>       
+      <author> Jack Vanderplas </author> 
+    </book>
+
+  </technicalBooksCatalogue>
+
+  <cookeryBooksCatalogue>
+
+    <book> 
+      <isbn> 9780718154776 </isbn> 
+      <title> Jamie's 30-Minute Meals </title>       
+      <author> Jamie Oliver </author> 
+    </book>
+
+    <book> 
+      <isbn> 0446679615 </isbn> 
+      <title> The Starving Students' Cookbook </title>       
+      <author> Dede Hall </author> 
+    </book>
+
+  </cookeryBooksCatalogue>
+
+</library>
