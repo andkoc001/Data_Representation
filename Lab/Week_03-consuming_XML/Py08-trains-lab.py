@@ -8,10 +8,14 @@
 import requests
 import csv
 from bs4 import BeautifulSoup
+
+
 url = "http://api.irishrail.ie/realtime/realtime.asmx/getCurrentTrainsXML"
 page = requests.get(url)
 
 soup = BeautifulSoup(page.content, 'xml')
+
+# print(soup.prettify())
 
 retrieveTags = ['TrainStatus',
                 'TrainLatitude',
@@ -22,23 +26,32 @@ retrieveTags = ['TrainStatus',
                 'Direction'
                 ]
 
-with open('week03_train.csv', mode='w') as train_file:
+with open('week03_train_lab.csv', mode='w') as train_file:
+
     train_writer = csv.writer(
         train_file, delimiter='\t', quotechar='"', quoting=csv.QUOTE_MINIMAL)
 
     listings = soup.findAll("objTrainPositions")
 
     for listing in listings:
+
         # print(listing)
         print(listing.TrainLatitude.string)
         # or
         # print(listing.find('TrainLatitude').string)
-        lat = float(listing.TrainLatitude.string)
-        if (lat < 53.4):
 
-            entryList = []
-            entryList.append(listing.find('TrainLatitude').string)
-            train_writer.writerow(entryList)
+        # lat = float(listing.TrainLatitude.string)
+        # if (lat < 53.4):
+
+        entryList = []
+
+        # entryList.append(listing.find('TrainLatitude').string)
+
+        for retrieveTag in retrieveTags:
+            entryList.append(listing.find(retrieveTag).string)
+            print(listing.find(retrieveTag).string)
+
+        train_writer.writerow(entryList)
 
 
 #print (soup.prettify())

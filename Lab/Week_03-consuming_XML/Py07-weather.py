@@ -12,12 +12,12 @@ listings = soup.findAll("time")
 for listing in listings:
     #print (listing)
     fromtime = listing['from']
-    print (fromtime)
-    
+    print(fromtime)
+
     windspeedelem = listing.find("windSpeed")
     if windspeedelem:
         mps = windspeedelem['mps']
-        print (mps)
-    #gotta go
+        print(mps)
+    # gotta go
 
 #print (soup.prettify())
